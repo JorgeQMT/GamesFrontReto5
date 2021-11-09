@@ -159,11 +159,11 @@ function borrarElementoAdmin(idElemento){
         success:function(respuesta){
             $("#resultadoAdmin").empty();
             traerInformacionAdmin();
-            alert("Administrador no se Borro Correctamente");
+            alert("Administrador se Borro Correctamente");
         },
         error: function(jqXHR, textStatus, errorThrown) {
             window.location.reload();
-          alert("Administrador no se Borro Correctamente");
+          alert("Administrador se Borro Correctamente");
         }
     });
 }

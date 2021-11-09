@@ -1,51 +1,72 @@
 <!DOCTYPE html>
-
-<html lang="es">
+<html>
     <head>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <title>Demo Login</title>
-        <meta name="description" content=""/>
-        <meta name="viewport" content="width=device-width"/>
-        <base href="/"/>
-        <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
-        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/misFunciones.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"crossorigin="anonymous">
+    
+        <title>RENTAL GAMES</title>
     </head>
     <body>
-        <h1>#Renta de Juegos</h1>
-        <div class="container unauthenticated">
-            Para iniciar sesión con Github:
-            <a href="/oauth2/authorization/github">haz click</a>
+        <canvas></canvas>
+        <div style="color: #fff; font-size: 18px;">
+            Logged in as: <span id="user"></span>
         </div>
-        <div class="container authenticated" style="display:none">
-            Autenticado como: <span id="user"></span>
-            <p>
-                <a href="HomePage.html">Ir a la pagina privada</a>
-            </p>
-            <div>
-                <button onClick="logout()" class="btn btn-primary">Logout</button>
+        <div id="logo" style="margin-left: 500px; margin-top: 30px; color: #fff; ">
+            <h1>RENTAL GAMES</h1>
+        </div>
+        <header class="header">
+            <div class="container">
+                <div class="btn-menu">
+                    <label for="btn-menu" class="glyphicon glyphicon-eye-open"></label>
+                </div>
+                 <nav class="menu">
+                     <a href="#">Inicio</a>
+                     <a href="#">Nosotros</a>
+                     <a href="#">Blog</a>
+                     <a href="#">Contacto</a>
+                 </nav>
+            </div> 
+        </header>
+        <div class="capa"></div>
+        <input type="checkbox" id="btn-menu"><!-- comment -->
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="/index.html">Inicio</a>
+                    <a href="/Admin.html">Administradores</a>
+                    <a href="/Category.html">Categorias</a>
+                    <a href="/Game.html">Juegos</a>
+                    <a href="/Client.html">Clientes</a>
+                    <a href="/Message.html">Mensajes</a>
+                    <a href="/Reservation.html">Reservaciónes</a>
+                    <a href="/Score.html">Calificaciónes</a>
+                    <a href="/Report.html">Reporte</a>
+                </nav>
+                <label for="btn-menu" class="glyphicon glyphicon-eye-close"></label>
             </div>
-        </div>
+        </div>    
+<!--        <section class="stark-login" >
+            <div>
+                <div id="fade-box" style="margin-top: 100px;">
+                    <button  onclick="window.location.href='/admin.html'"  type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Administradores</button>
+                    <button  onclick="window.location.href='/category.html'"  type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Categorias</button>
+                    <button  onclick="window.location.href='/game.html'" type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Juegos</button>
+                    <button  onclick="window.location.href='/client.html'"  type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Clientes</button>               
+                    <button  onclick="window.location.href='/message.html'" type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Mensajes</button>
+                    <button  onclick="window.location.href='/reservation.html'" type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">Reservaciónes</button>
+                    <button  onclick="window.location.href='/score.html'" type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search">calificaciónes</button>
+                </div>
+            </div>
+        </section>   -->
     </body>
-    <script type="text/javascript">
-        $.get("/user", function (data) {
-            console.log("get");
-            console.log(data);
-            $("#user").html(data.name);
-            $(".unauthenticated").hide();
-            $(".authenticated").show();
-            
-        });
-
-
-        var logout = function () {
-            $.post("/logout", function () {
-                $("#user").html('');
-                $(".unauthenticated").show();
-                $(".authenticated").hide();
-            });
-            return true;
-        };
-    </script>
 </html>
+
+
+
